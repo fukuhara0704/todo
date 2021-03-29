@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+<p>
+  <span th:text="${hello}">Hello World!</span>
+</p>
+  <table>
+    <tr th:each="data : ${weatherDataList}" th:object="${data}">
+      <td th:text="*{id}"></td>
+      <td th:text="*{location_id}"></td>
+      <td th:text="*{name}"></td>
+      <td th:text="*{temperature}"></td>
+      <td th:text="*{humidity}"></td>
+      <td th:text="*{date_time}"></td>
+    </tr>
+  </table>
+</body>
+</html>
