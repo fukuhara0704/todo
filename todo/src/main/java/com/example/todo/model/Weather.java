@@ -1,16 +1,8 @@
 package com.example.todo.model;
 
 import java.sql.Timestamp;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-@Entity
-@Table(name="weather")
+
 public class Weather {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
     
     private Integer location_id;

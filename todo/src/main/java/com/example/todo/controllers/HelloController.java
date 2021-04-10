@@ -18,7 +18,7 @@ public class HelloController {
     model.addAttribute("hello", "Hello World!"); // Hello World!の表示
     
     // 気象データの取得
-    List<Weather> weatherDataList = weatherService.findAllWeatherData();
+    List<Weather> weatherDataList = weatherService.findAll();
     model.addAttribute("weatherDataList", weatherDataList);
     
     return "hello";
