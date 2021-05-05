@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class User implements UserDetails {
+public class UserModel implements UserDetails {
 
     private String id;
 
@@ -21,7 +21,13 @@ public class User implements UserDetails {
     private String password;
 
     private boolean enabled;
+    
+    // 追加フィールド
+    private String userId;
+    
+    private Integer authority;
 
+    //#region UserDetailsインターフェイスのメソッド
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
@@ -35,10 +41,6 @@ public class User implements UserDetails {
     @Override
     public String getUsername() {
         return this.id;
-    }
-    
-    public String getName(){
-        return this.name;
     }
 
     @Override
@@ -60,5 +62,27 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return this.enabled;
     }
+    //#endregion 
 
+    //#region 追加メソッド
+    public String getName(){
+        return this.name;
+    }
+
+    public Integer getAuthority() {
+        return authority;
+    }
+
+    public void setAuthority(Integer authority) {
+        this.authority = authority;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+    //#endregion 
 }

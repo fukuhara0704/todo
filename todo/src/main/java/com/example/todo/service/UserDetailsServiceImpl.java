@@ -1,7 +1,7 @@
 package com.example.todo.service;
 
 import com.example.todo.mapper.UserMapper;
-import com.example.todo.model.User;
+import com.example.todo.model.UserModel;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,7 +20,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         if (StringUtils.isEmpty(username)) throw new UsernameNotFoundException("");
 
-        User user = userMapper.selectByUser(username);
+        UserModel user = userMapper.selectByUser(username);
 
         // ユーザが存在しない場合
         if (user == null) throw new UsernameNotFoundException("");
