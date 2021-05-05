@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+    <h1>実施済みのタスク</h1>
+    <table>
+        <tr th:each="data : ${unfinishTaskDataList}" th:object="${data}">
+        <td th:text="*{id}"></td>
+        <td th:text="*{user_id}"></td>
+        <td th:text="*{task_id}"></td>
+        <td th:text="*{task_name}"></td>
+        <td th:text="*{task_priority}"></td>
+        <td th:text="*{task_start_datetime}"></td>
+        <td th:text="*{task_end_datetime}"></td>
+        <td th:text="*{task_routine}"></td>
+        <td th:text="*{task_status}"></td>
+        </tr>
+    </table>
+</body>
+</html>

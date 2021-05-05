@@ -22,9 +22,6 @@ public class UserModel implements UserDetails {
 
     private boolean enabled;
     
-    // 追加フィールド
-    private String userId;
-    
     private Integer authority;
 
     //#region UserDetailsインターフェイスのメソッド
@@ -75,14 +72,6 @@ public class UserModel implements UserDetails {
 
     public void setAuthority(Integer authority) {
         this.authority = authority;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
     }
     //#endregion 
 }

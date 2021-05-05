@@ -13,6 +13,6 @@ import org.apache.ibatis.annotations.Select;
 public interface UserMapper {
 
     // 全件取得
-    @Select("SELECT id, user_id, name, password, enabled, authority FROM public.t_user where name = #{name}")
+    @Select("SELECT id, name, password, enabled, authority FROM public.t_user where name = #{name}")
     public UserModel selectByUser(@Param("name") String name);
 }
