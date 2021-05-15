@@ -1,23 +1,71 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{common/layout}">
+
 <head>
-  <meta charset="UTF-8" />
-  <title></title>
+    <link th:href="@{/css/today.css}" rel="stylesheet" type="text/css">
+    <script th:src="@{/js/today.js}"></script>
+    <title>今日のタスク</title>
 </head>
+
 <body>
-    <h1>本日のタスク</h1>
-    <table>
-        <tr th:each="data : ${todayTaskDataList}" th:object="${data}">
-        <td th:text="*{id}"></td>
-        <td th:text="*{user_id}"></td>
-        <td th:text="*{task_id}"></td>
-        <td th:text="*{task_name}"></td>
-        <td th:text="*{task_priority}"></td>
-        <td th:text="*{task_start_datetime}"></td>
-        <td th:text="*{task_end_datetime}"></td>
-        <td th:text="*{task_routine}"></td>
-        <td th:text="*{task_status}"></td>
-        </tr>
-    </table>
+    <div layout:fragment="contents">
+        <div class="body-container">
+
+            <div class="task-header">
+                <div class="header-container">
+                    <div class="task-menubar">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="task-title">本日のタスク</div>
+
+                </div>
+            </div>
+
+            <div class="task-content">
+                <table class="task-tbl">
+                    <tr th:each="data : ${todayTaskDataList}" th:object="${data}">
+                        <td class="task-td">
+                            <div class="finish">
+                                <input class="finish-check" type="checkbox" name="finish-check">
+                                <span class="dummy-finish-check"></span>
+                            </div>
+                            <div class="task">
+                                <div class="task-name" th:text="*{task_name}"></div>
+                            </div>
+                            <div class="important">
+                                <span class="important-mark">★</span>
+                            </div>
+                        </td>
+                        <!-- <td th:text="*{id}"></td>
+                        <td th:text="*{user_id}"></td>
+                        <td th:text="*{task_id}"></td>
+                        <td th:text="*{task_name}"></td>
+                        <td th:text="*{task_priority}"></td>
+                        <td th:text="*{task_start_datetime}"></td>
+                        <td th:text="*{task_end_datetime}"></td>
+                        <td th:text="*{task_routine}"></td>
+                        <td th:text="*{task_status}"></td> -->
+                    </tr>
+                </table>
+            </div>
+
+            <div class="task-footer">
+                <form class="add-task-container" method="POST" action="today">
+                    <div class="icon">
+                        <span class="en-icon"></span>
+                    </div>
+                    <input type="text" name="test" class="add-task" id="add-task" placeholder=" + タスクの追加" maxlength="257">
+                    <div class="calendar">
+                    </div>
+                    <div class="repeat">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>

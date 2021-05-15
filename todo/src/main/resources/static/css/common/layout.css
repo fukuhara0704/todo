@@ -1,0 +1,107 @@
+/* 共通レイアウト */
+
+body {
+    min-height: 100vh;
+    display: flex;
+}
+
+.grovalNavigation {
+    text-align: left;
+    background-color: #fff;
+    color: #000;
+    flex-basis: 300px;
+}
+
+.localNavigation {
+    text-align: center;
+    background-color: #fff;
+    color: #fff;
+    display: none;
+    flex-basis: 400px;
+}
+
+.localNavigation.isActive {
+    text-align: center;
+    background-color: #fff;
+    color: #fff;
+    display: block;
+    flex-basis: 400px;
+}
+
+.content {
+    text-align: center;
+    background-color: #eee;
+    flex: auto;
+}
+
+
+/* サイドバー */
+
+.app-title {
+    margin: 10px 10px 10px 10px;
+}
+
+.item {
+    padding: 20px;
+    width: 100%;
+    background-color: #fff;
+    border: #fff;
+    outline: none;
+    text-align: left;
+}
+
+.item:focus {
+    outline: none;
+}
+
+.item:hover {
+    /*リンクにマウスが乗ったら背景色を変更する*/
+    /* background-color:#F2F2F2; 	 */
+    background-color: #8a8a8a;
+}
+
+.task-count {
+    padding-left: 50%;
+}
+
+.user-container {
+    display: flex;
+}
+
+.user {
+    flex-grow: 10;
+    padding: 20px;
+    background-color: #fff;
+    border: #fff;
+    outline: none;
+    text-align: left;
+}
+
+.user:focus {
+    outline: none;
+}
+
+.user:hover {
+    /*リンクにマウスが乗ったら背景色を変更する*/
+    /* background-color:#F2F2F2; 	 */
+    background-color: #8a8a8a;
+}
+
+.search {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    border: #fff;
+    outline: none;
+    text-align: center;
+}
+
+.search:focus {
+    outline: none;
+}
+
+.search:hover {
+    /*リンクにマウスが乗ったら背景色を変更する*/
+    /* background-color:#F2F2F2; 	 */
+    background-color: #8a8a8a;
+}

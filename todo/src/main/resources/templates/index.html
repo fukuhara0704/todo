@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{common/layout}">
   <head>
-    <title>Demoアプリケーション</title>
-    <meta charset="utf-8" />
+    <title>TODOアプリケーション（継承版）</title>
   </head>
   <body>
-    <h1>Hello world! index</h1>
+      <div layout:fragment="contents">
+          <p>継承</p>
+      </div>
   </body>
 </html>

@@ -35,6 +35,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         
         // SESSIONに格納
         userSession.setUserId(user.getUsername());
+        userSession.setUserName(user.getName());
+
         return user;
     }
 

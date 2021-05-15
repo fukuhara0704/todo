@@ -1,0 +1,251 @@
+            /* タスク内のレイアウト */
+            
+            .body-container {
+                min-height: 100vh;
+                display: flex;
+                /*  縦並び */
+                flex-direction: column;
+            }
+            
+            .task-header {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .task-content {
+                flex: 20;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .task-footer {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .header-container {
+                width: 96%;
+                height: 101px;
+            }
+            
+            .task-title {
+                flex: 1;
+                text-align: left;
+                font-size: 40px;
+                font-weight: lighter;
+                margin-top: 45px;
+            }
+            
+            .task-menubar {
+                flex: 1;
+            }
+            /* task-header内のレイアウト */
+            /* task-container内のレイアウト */
+            
+            .task-tbl {
+                width: 96%;
+            }
+            /* task-footer内のレイアウト */
+            
+            .add-task-container {
+                display: flex;
+                width: 96%;
+            }
+            
+            .add-task {
+                flex: 10;
+                border: none;
+                height: 50px;
+                border-radius: 10px 0px 0px 10px;
+                background-color: gray;
+            }
+            
+            .add-task.isActive {
+                flex: 10;
+                border: none;
+                height: 50px;
+                border-radius: 0px 0px 0px 0px;
+                background-color: gray;
+            }
+            
+            .add-task::placeholder {
+                color: #FFF;
+                font-size: 1.4rem;
+                font-style: italic;
+            }
+            
+            .add-task:focus {
+                outline: none;
+            }
+            
+            .add-task:focus::-webkit-input-placeholder {
+                color: transparent;
+            }
+            
+            .add-task:focus::-moz-placeholder {
+                color: transparent;
+            }
+            
+            .add-task:focus::-ms-input-placeholder {
+                color: transparent;
+            }
+            
+            .add-task:focus::placeholder {
+                color: transparent;
+            }
+            
+            .calendar {
+                flex: 1;
+                height: 50px;
+                background-color: gray;
+            }
+            
+            .repeat {
+                flex: 1;
+                height: 50px;
+                background-color: gray;
+                border-radius: 0px 10px 10px 0px;
+            }
+            
+            .icon {
+                flex: 0.4;
+                height: 50px;
+                background-color: gray;
+                display: none;
+            }
+            
+            .icon.isActive {
+                flex: 0.4;
+                height: 50px;
+                background-color: gray;
+                display: block;
+                border-radius: 10px 0px 0px 10px;
+            }
+            
+            .en-icon {
+                position: relative;
+                top: 9px;
+                left: 9px;
+                display: block;
+                width: 32px;
+                height: 32px;
+                background: #FFF;
+                border-radius: 50%;
+                transition: all .15s linear;
+            }
+            /* taskのレイアウト */
+            
+            .task-td {
+                display: flex;
+            }
+            /* ボックスのスタイル */
+            
+            .finish {
+                width: 60px;
+                height: 60px;
+                background-color: #FFF;
+                padding: 13px 10px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                border-radius: 10px 0px 0px 10px;
+            }
+            
+            .task {
+                width: 100%;
+                background-color: #FFF;
+            }
+            
+            .task .task-name {
+                text-align: left;
+                line-height: 60px;
+                margin-left: 10px;
+            }
+            
+            .important {
+                width: 60px;
+                height: 60px;
+                background-color: #FFF;
+                border-radius: 0px 10px 10px 0px;
+            }
+            
+            .important .important-mark {
+                font-size: 25px;
+                color: gray;
+                line-height: 57px;
+            }
+            
+            .important .important-mark.isActive {
+                font-size: 25px;
+                color: yellow;
+                line-height: 57px;
+            }
+            /* マウスオーバーの処理*/
+            /* .task-td:hover {
+                background-color: red;
+            } */
+            
+            .task-td:hover>.finish {
+                background-color: #f2f2f2;
+            }
+            
+            .task-td:hover>.task {
+                background-color: #f2f2f2;
+            }
+            
+            .task-td:hover>.important {
+                background-color: #f2f2f2;
+            }
+            
+            .finish-check {
+                margin: 1;
+                width: 0;
+                opacity: 0;
+            }
+            
+            .finish-check:checked+.dummy-finish-check {
+                background: rgba(107, 26, 250, 1);
+            }
+            
+            .finish-check:checked+.dummy-finish-check::before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 35%;
+                height: 4px;
+                border-radius: 2px;
+                transform: translate(-6px, 5px) rotateZ(-135deg);
+                transform-origin: 2px 2px;
+                background: #FFFFFF;
+            }
+            
+            .finish-check:checked+.dummy-finish-check::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 70%;
+                height: 4px;
+                border-radius: 2px;
+                transform: translate(-6px, 5px) rotateZ(-45deg);
+                transform-origin: 2px 2px;
+                background: #FFFFFF;
+            }
+            
+            .dummy-finish-check {
+                position: relative;
+                top: 0;
+                left: 0;
+                display: block;
+                width: 32px;
+                height: 32px;
+                border: solid 2px transparent;
+                background: rgba(0, 0, 0, .15);
+                border-radius: 50%;
+                transition: all .15s linear;
+            }

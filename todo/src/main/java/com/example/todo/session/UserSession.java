@@ -13,9 +13,18 @@ public class UserSession implements Serializable {
     private final long serialVersionUID = 6334063099671792256L;
 
     private String userId;
+    private String userName;
 
     public String getUserId() {
         return userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public void setUserId(String userId) {
