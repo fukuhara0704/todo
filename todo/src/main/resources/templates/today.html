@@ -3,7 +3,10 @@
 
 <head>
     <link th:href="@{/css/today.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/today-right-side.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/today-footer.css}" rel="stylesheet" type="text/css">
     <script th:src="@{/js/today.js}"></script>
+    <script th:src="@{/js/today-ajax.js}"></script>
     <title>今日のタスク</title>
 </head>
 
@@ -14,9 +17,7 @@
             <div class="task-header">
                 <div class="header-container">
                     <div class="task-menubar">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <span>test</span>
                     </div>
                     <div class="task-title">本日のタスク</div>
 
@@ -31,7 +32,7 @@
                                 <input class="finish-check" type="checkbox" name="finish-check">
                                 <span class="dummy-finish-check"></span>
                             </div>
-                            <div class="task">
+                            <div class="task" th:id="*{task_id}">
                                 <div class="task-name" th:text="*{task_name}"></div>
                             </div>
                             <div class="important">
@@ -66,6 +67,36 @@
         </div>
     </div>
 
+    <div layout:fragment="localNavigation">
+
+        <div class="local-navi-content">
+            <div class="local-task-content">
+                <textarea class="side-task" id="taskData" name="side-task" rows="4" cols="40" maxlength="257"></textarea>
+            </div>
+            <div class="local-add-today">
+                <span> ◆ </span>
+                <label id="todayFlagData"></label>
+            </div>
+            <div class="local-limit">
+                <span> ◆ </span>
+                <label id="limitData"></label>
+            </div>
+            <div class="local-memo">
+                <textarea class="memo" id="memoData" name="memo" rows="4" cols="40" maxlength="257" placeholder="メモ"></textarea>
+            </div>
+        </div>
+        <div class="local-footer">
+            <div class="local-close">
+                <div class="arrow-left"></div>
+            </div>
+            <div class="local-create-data"></div>
+            <div class="local-delete">
+                <div class="trash"></div>
+            </div>
+        </div>
+    </div>
 </body>
+<!-- <meta name="_csrf" th:content="${_csrf.token}" />
+<meta name="_csrf_header" th:content="${_csrf.headerName}" /> -->
 
 </html>

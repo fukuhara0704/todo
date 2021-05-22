@@ -48,7 +48,9 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
             .deleteCookies("JSESSIONID")
             // ログアウト時のセッション破棄を有効化
             .invalidateHttpSession(true)
-            .permitAll();
+            .permitAll()
+            // cfrの無効化
+            .and().csrf().disable().cors();
         // ▼今回追加
         // メッセージをカスタマイズするために、メッセージソースを設定する
         AuthenticationManager a = this.authenticationManager();

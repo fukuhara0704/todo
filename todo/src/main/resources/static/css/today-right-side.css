@@ -1,0 +1,156 @@
+            /**  サイドバーのレイアウト*/
+            
+            .local-navi-content {
+                /* background: #f3f2f2; */
+                /* background-color: #F5C9C6; */
+                background-color: #eee;
+                overflow-y: auto;
+                height: 96vh;
+            }
+            
+            .local-task-content {
+                width: 100%;
+                height: 400px;
+            }
+            
+            .side-task {
+                border: 0px none;
+                width: 100%;
+                height: 100%;
+                font-size: 40px;
+            }
+            
+            .side-task:focus {
+                outline: none;
+            }
+            
+            .local-add-today {
+                margin: 0.5em auto;
+                width: 97%;
+                height: 50px;
+                text-align: left;
+                color: #000;
+                background-color: #FFF;
+                padding-top: 10px;
+                padding-left: 10px;
+            }
+            
+            .local-limit {
+                background-color: #FFF;
+                margin: 0.5em auto;
+                width: 97%;
+                height: 50px;
+                text-align: left;
+                color: #000;
+                padding-top: 10px;
+                padding-left: 10px;
+            }
+            
+            .local-memo {
+                margin: 0.5em auto;
+                width: 97%;
+                height: 100px;
+            }
+            
+            .memo {
+                border: 0px none;
+                width: 100%;
+                height: 100%;
+                font-size: 20px;
+            }
+            
+            .memo:focus {
+                outline: none;
+            }
+            
+            .memo::placeholder {
+                color: gray;
+                font-size: 20px;
+            }
+            
+            .local-footer {
+                position: absolute;
+                bottom: 0;
+                height: 56px;
+                width: 400px;
+                display: flex;
+            }
+            
+            .local-close {
+                width: 5vh;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+            
+            .local-create-data {
+                background-color: #FFF;
+                width: 100%;
+                height: 100%;
+            }
+            
+            .local-delete {
+                width: 5vh;
+                height: 100%;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+            /** テキストエリアの拡大縮小対策*/
+            
+            textarea {
+                resize: none;
+            }
+            
+            .arrow-left {
+                transform: rotate(45deg);
+                border-bottom: solid 4px #343a40;
+                border-left: solid 4px #343a40;
+                width: 24px;
+                height: 24px;
+                transform: rotate( 45deg);
+                margin: 15px;
+            }
+            /* 本体 */
+            
+            .trash {
+                font-size: 31px;
+                position: relative;
+                top: 15px;
+                left: 10px;
+                width: 1em;
+                height: 1.19em;
+                border-left: 0.1em solid #39a9d6;
+                border-right: 0.1em solid #39a9d6;
+                border-bottom: 0.1em solid #39a9d6;
+                border-radius: 0 0 0.1em 0.1em;
+                background: linear-gradient(to bottom, #39a9d6 0%, #39a9d6 100%) 0.2em 0.2em, linear-gradient(to bottom, #39a9d6 0%, #39a9d6 100%) 0.4em 0.2em, linear-gradient(to bottom, #39a9d6 0%, #39a9d6 100%) 0.6em 0.2em;
+                background-size: 0.1em 0.8em;
+                background-repeat: no-repeat;
+            }
+            /* 蓋 */
+            
+            .trash::before {
+                content: "";
+                position: absolute;
+                top: -0.1em;
+                left: -0.23em;
+                width: 1.26em;
+                height: 0.1em;
+                background-color: #39a9d6;
+            }
+            /* 取っ手 */
+            
+            .trash::after {
+                content: "";
+                position: absolute;
+                top: -0.3em;
+                left: 0.13em;
+                width: 0.5em;
+                height: 0.2em;
+                border-top: 0.1em solid #39a9d6;
+                border-left: 0.1em solid #39a9d6;
+                border-right: 0.1em solid #39a9d6;
+                border-radius: 0.1em 0.1em 0 0;
+            }

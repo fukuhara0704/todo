@@ -5,29 +5,31 @@
                 display: flex;
                 /*  縦並び */
                 flex-direction: column;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
             }
             
             .task-header {
-                flex: 1;
                 display: flex;
                 justify-content: center;
             }
             
             .task-content {
-                flex: 20;
                 display: flex;
                 justify-content: center;
+                overflow-y: scroll;
             }
             
-            .task-footer {
-                flex: 1;
-                display: flex;
-                justify-content: center;
+            .task-content::-webkit-scrollbar {
+                display: none;
             }
             
             .header-container {
                 width: 96%;
-                height: 101px;
+                height: 100px;
             }
             
             .task-title {
@@ -35,105 +37,18 @@
                 text-align: left;
                 font-size: 40px;
                 font-weight: lighter;
-                margin-top: 45px;
+                margin-top: 15px;
             }
             
             .task-menubar {
-                flex: 1;
+                display: none;
+                /* flex: 1; */
             }
             /* task-header内のレイアウト */
             /* task-container内のレイアウト */
             
             .task-tbl {
                 width: 96%;
-            }
-            /* task-footer内のレイアウト */
-            
-            .add-task-container {
-                display: flex;
-                width: 96%;
-            }
-            
-            .add-task {
-                flex: 10;
-                border: none;
-                height: 50px;
-                border-radius: 10px 0px 0px 10px;
-                background-color: gray;
-            }
-            
-            .add-task.isActive {
-                flex: 10;
-                border: none;
-                height: 50px;
-                border-radius: 0px 0px 0px 0px;
-                background-color: gray;
-            }
-            
-            .add-task::placeholder {
-                color: #FFF;
-                font-size: 1.4rem;
-                font-style: italic;
-            }
-            
-            .add-task:focus {
-                outline: none;
-            }
-            
-            .add-task:focus::-webkit-input-placeholder {
-                color: transparent;
-            }
-            
-            .add-task:focus::-moz-placeholder {
-                color: transparent;
-            }
-            
-            .add-task:focus::-ms-input-placeholder {
-                color: transparent;
-            }
-            
-            .add-task:focus::placeholder {
-                color: transparent;
-            }
-            
-            .calendar {
-                flex: 1;
-                height: 50px;
-                background-color: gray;
-            }
-            
-            .repeat {
-                flex: 1;
-                height: 50px;
-                background-color: gray;
-                border-radius: 0px 10px 10px 0px;
-            }
-            
-            .icon {
-                flex: 0.4;
-                height: 50px;
-                background-color: gray;
-                display: none;
-            }
-            
-            .icon.isActive {
-                flex: 0.4;
-                height: 50px;
-                background-color: gray;
-                display: block;
-                border-radius: 10px 0px 0px 10px;
-            }
-            
-            .en-icon {
-                position: relative;
-                top: 9px;
-                left: 9px;
-                display: block;
-                width: 32px;
-                height: 32px;
-                background: #FFF;
-                border-radius: 50%;
-                transition: all .15s linear;
             }
             /* taskのレイアウト */
             
@@ -248,4 +163,9 @@
                 background: rgba(0, 0, 0, .15);
                 border-radius: 50%;
                 transition: all .15s linear;
+            }
+            
+            html,
+            body {
+                overflow: hidden
             }

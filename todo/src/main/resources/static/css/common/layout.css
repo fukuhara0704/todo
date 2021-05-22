@@ -17,6 +17,7 @@ body {
     background-color: #fff;
     color: #fff;
     display: none;
+    height: 100vh;
     flex-basis: 400px;
 }
 
@@ -24,14 +25,18 @@ body {
     text-align: center;
     background-color: #fff;
     color: #fff;
-    display: block;
     flex-basis: 400px;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
 }
 
 .content {
     text-align: center;
-    background-color: #eee;
+    /* background-color: #eee; */
+    background-color: #F5C9C6;
     flex: auto;
+    position: relative;
 }
 
 

@@ -25,4 +25,8 @@ public interface TaskMapper {
     // 対象のユーザーの全未実施タスクの情報を取得する。
     @Select("SELECT * FROM public.t_task where user_id = #{user_id} and task_status = #{taskStatus} ORDER BY id")
     public List<TaskModel> findbyIdAllDoneTask(@Param("user_id") String userId, @Param("taskStatus") Integer taskStatus);
+    
+    
+    @Select("Select task_name, task_memo, task_end_datetime, task_today_flag from public.t_task where user_id = #{user_id} and task_id = #{taskId}")
+    public List<TaskModel> findByTaskId(@Param("user_id") String userId, @Param("taskId") Integer taskId);
 }

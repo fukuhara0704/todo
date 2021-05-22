@@ -8,13 +8,15 @@ public class TaskModel {
     private Integer id;
     private String user_id;
     private Integer project_id;
-    private String task_id;
+    private Integer task_id;
     private String task_name;
     private Integer task_priority;
     private String task_start_datetime;
     private String task_end_datetime;
     private Integer task_routine;
     private Integer task_status;
+    private String task_memo;
+    private Short task_today_flag;
 
     // getter
     public Integer getTask_status() {
@@ -29,7 +31,7 @@ public class TaskModel {
     public Integer getProject_id() {
         return project_id;
     }
-    public String getTask_id() {
+    public Integer getTask_id() {
         return task_id;
     }
     public String getTask_name() {
@@ -46,5 +48,11 @@ public class TaskModel {
     }
     public Integer getTask_routine() {
         return task_routine;
+    }
+    public String getTask_memo() {
+        return task_memo;
+    }
+    public Short getTask_today_flag() {
+        return task_today_flag;
     }
 }

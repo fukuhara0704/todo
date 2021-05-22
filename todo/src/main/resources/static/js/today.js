@@ -1,8 +1,20 @@
 $(function() {
-    $('.task').click(function() {
-        console.log('taskクリックされました！');
+    // $('.task').click(function() {
+    //     console.log('taskクリックされました！');
+    //     $('.localNavigation').toggleClass('isActive');
+    // })
+
+
+    $('.arrow-left').click(function() {
+        console.log('arrow-leftクリックされました！');
         $('.localNavigation').toggleClass('isActive');
     })
+
+    $('.trash').click(function() {
+        console.log('trashクリックされました！');
+    })
+
+
 
     $('.important-mark').on('click', function(event) {
         console.log('importantクリックされました！');

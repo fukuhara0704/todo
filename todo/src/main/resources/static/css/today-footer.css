@@ -1,0 +1,97 @@
+.task-footer {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 6vh;
+    /* background-color: #eee; */
+    background-color: #F5C9C6;
+}
+
+.add-task-container {
+    display: flex;
+    width: 96%;
+}
+
+.add-task {
+    flex: 10;
+    border: none;
+    height: 50px;
+    border-radius: 10px 0px 0px 10px;
+    background-color: gray;
+}
+
+.add-task.isActive {
+    flex: 10;
+    border: none;
+    height: 50px;
+    border-radius: 0px 0px 0px 0px;
+    background-color: gray;
+}
+
+.add-task::placeholder {
+    color: #FFF;
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+.add-task:focus {
+    outline: none;
+}
+
+.add-task:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.add-task:focus::-moz-placeholder {
+    color: transparent;
+}
+
+.add-task:focus::-ms-input-placeholder {
+    color: transparent;
+}
+
+.add-task:focus::placeholder {
+    color: transparent;
+}
+
+.calendar {
+    flex: 1;
+    height: 50px;
+    background-color: gray;
+}
+
+.repeat {
+    flex: 1;
+    height: 50px;
+    background-color: gray;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.icon {
+    flex: 0.4;
+    height: 50px;
+    background-color: gray;
+    display: none;
+}
+
+.icon.isActive {
+    flex: 0.4;
+    height: 50px;
+    background-color: gray;
+    display: block;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.en-icon {
+    position: relative;
+    top: 9px;
+    left: 9px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: #FFF;
+    border-radius: 50%;
+    transition: all .15s linear;
+}
