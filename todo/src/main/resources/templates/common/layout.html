@@ -7,7 +7,6 @@
     <link th:href="@{webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}" rel="stylesheet" />
     <link th:href="@{/css/common/layout.css}" rel="stylesheet" type="text/css">
     <!-- jsファイル-->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
     <script th:src="@{webjars/jquery/3.5.0/jquery.min.js}"></script>
     <script th:src="@{webjars/bootstrap/4.4.1-1/js/bootstrap.min.js}"></script>
     <!-- jsファイル-->
@@ -21,7 +20,7 @@
             <button class="user" th:text="${userName}"></button>
             <button class="search">検索</button>
         </div>
-        <a th:href="@{/today}">
+        <a th:href="@{/task(type=1)}">
             <button class="item">
                 <span> ◆ </span>
                 <span>今日のタスク</span>
@@ -38,23 +37,106 @@
             <span>今後のタスク</span>
             <span class="task-count"></span>
         </button>
-        <button class="item">
+        <a th:href="@{/task(type=)}">
+            <button class="item">
             <span> ○ </span>
             <span>タスク一覧</span>
             <span class="task-count">100</span>
         </button>
+        </a>
         <hr>
         <button class="item">
             <span> + </span>
             <span>新しいプロジェクト</span>
         </button>
     </div>
+
     <div class="content">
-        <div layout:fragment="contents"></div>
+
+        <div class="body-container">
+            <div class="task-header">
+                <div class="header-container">
+                    <div layout:fragment="taskTitle"></div>
+                </div>
+            </div>
+
+            <div class="task-content">
+                <table class="task-tbl">
+                    <tr th:each="data : ${taskDataList}" th:object="${data}">
+                        <td class="task-td">
+                            <div class="finish">
+                                <input class="finish-check" type="checkbox" name="finish-check">
+                                <span class="dummy-finish-check"></span>
+                            </div>
+                            <div class="task" th:id="*{task_id}">
+                                <div class="task-name" th:id="task_ + *{task_id}" th:text="*{task_name}"></div>
+
+                            </div>
+                            <div class="important">
+                                <span class="important-mark">★</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="task-footer">
+                <form id="createForm" class="add-task-container" method="POST" action="/task/create">
+                    <div class="icon">
+                        <span class="en-icon"></span>
+                    </div>
+                    <input type="text" name="add-task-data" class="add-task" id="add-task" placeholder=" + タスクの追加" maxlength="257">
+                    <div layout:fragment="taskTypeCreate"></div>
+                    <div class="calendar">
+                    </div>
+                    <div class="repeat">
+                    </div>
+                </form>
+            </div>
+
+        </div>
     </div>
+
     <div class="localNavigation">
-        <div layout:fragment="localNavigation"></div>
+
+        <div class="local-navi-content">
+            <div class="local-task-content">
+                <textarea class="side-task" id="taskData" name="side-task" rows="4" cols="40" maxlength="257"></textarea>
+                <input type="hidden" id="hiddenTaskData">
+                <input type="hidden" id="hiddenTaskId">
+            </div>
+            <div class="local-add-today">
+                <span> ◆ </span>
+                <label id="todayFlagData"></label>
+            </div>
+            <div class="local-limit">
+                <span> ◆ </span>
+                <label id="limitData"></label>
+            </div>
+            <div class="local-memo">
+                <textarea class="memo" id="memoData" name="memo" rows="4" cols="40" maxlength="257" placeholder="メモ"></textarea>
+                <input type="hidden" id="hiddenMemoData">
+            </div>
+        </div>
+
+        <div class="local-footer">
+            <div class="local-close">
+                <div class="arrow-left"></div>
+            </div>
+            <div class="local-create-data">
+                <label id="createdTime"></label>
+            </div>
+            <div class="local-delete">
+                <form id="delForm" action="/task/delete" method="POST">
+                    <div class="trash"> </div>
+                    <input type="hidden" id="hiddenDelTaskId" name="hd-del-task-id">
+                    <div layout:fragment="taskTypeDel"></div>
+                </form>
+            </div>
+        </div>
+
     </div>
+
 </body>
 
 </html>

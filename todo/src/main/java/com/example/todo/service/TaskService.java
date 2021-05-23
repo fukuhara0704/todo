@@ -46,4 +46,23 @@ public class TaskService {
         List<TaskModel> taskModel = taskMapper.findbyIdAllDoneTask(userId, taskStatus);
         return taskModel;
     }
+
+    public boolean deleteTask(String userId, Integer taskId) {
+        if (!taskMapper.deleteTask(userId, taskId)) {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean createTask(String userId, String taskName) {
+        if (!taskMapper.createTask(userId, taskName)) {
+            return false;
+        }
+        return true;
+    }
+
+    public List<TaskModel> findAllTask(String userId) {
+        List<TaskModel> allTaskList = taskMapper.findbyAllTask(userId);
+        return allTaskList;
+    }
 }

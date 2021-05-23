@@ -1,9 +1,4 @@
 $(function() {
-    // $('.task').click(function() {
-    //     console.log('taskクリックされました！');
-    //     $('.localNavigation').toggleClass('isActive');
-    // })
-
 
     $('.arrow-left').click(function() {
         console.log('arrow-leftクリックされました！');
@@ -12,6 +7,7 @@ $(function() {
 
     $('.trash').click(function() {
         console.log('trashクリックされました！');
+        $('#delForm').submit();
     })
 
 
@@ -27,11 +23,13 @@ $(function() {
         $(this).children('input[name="finish-check"]').prop('checked', true);
     })
 
-    $('.task-td').click(function() {
-        console.log('task-tdクリックされました！');
-    })
 
-
+    $("#add-task").keydown(function(event) {
+        if (event.key === "Enter") {
+            console.log("Enterキーが押されました");
+            $('#createForm').submit();
+        }
+    });
 
     // テキストボックスにフォーカス時、フォームの背景色を変化
     $('#add-task').focusin(function(e) {
@@ -39,6 +37,7 @@ $(function() {
             $('.add-task').toggleClass('isActive');
             $('.icon').toggleClass('isActive');
             console.log(this)
+
         })
         .focusout(function(e) {
             console.log('フォーカスが外れました。');

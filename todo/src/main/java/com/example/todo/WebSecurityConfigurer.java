@@ -34,7 +34,7 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
             .usernameParameter("username")
             // passwordのパラメタ名
             .passwordParameter("password")
-            .successForwardUrl("/") // ログイン成功時に遷移するURL
+            .successForwardUrl("/task?type") // ログイン成功時に遷移するURL
             .failureUrl("/login?error") // ログイン失敗時に遷移するURL
             .permitAll()
         .and()

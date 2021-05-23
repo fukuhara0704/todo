@@ -1,5 +1,7 @@
 package com.example.todo.model;
 
+import java.sql.Timestamp;
+
 import lombok.Data;
 
 @Data
@@ -17,6 +19,7 @@ public class TaskModel {
     private Integer task_status;
     private String task_memo;
     private Short task_today_flag;
+    private String task_created_time;
 
     // getter
     public Integer getTask_status() {
@@ -54,5 +57,8 @@ public class TaskModel {
     }
     public Short getTask_today_flag() {
         return task_today_flag;
+    }
+    public String getTask_created_time() {
+        return task_created_time;
     }
 }

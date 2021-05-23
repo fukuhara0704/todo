@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html
-  xmlns:th="http://www.thymeleaf.org"
-  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-  layout:decorate="~{common/layout}">
-  <head>
-    <title>TODOアプリケーション（継承版）</title>
-  </head>
-  <body>
-      <div layout:fragment="contents">
-          <p>継承</p>
-      </div>
-  </body>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{common/layout}">
+
+<head>
+    <link th:href="@{/css/today.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/today-right-side.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/today-footer.css}" rel="stylesheet" type="text/css">
+    <script th:src="@{/js/today.js}"></script>
+    <script th:src="@{/js/today-ajax.js}"></script>
+    <title>タスク一覧</title>
+</head>
+
+<body>
+    <div layout:fragment="taskTitle">
+        <div class="task-title">タスク一覧</div>
+    </div>
+    <div layout:fragment="taskTypeCreate">
+        <input type="hidden" id="hiddenCreateType" name="hd-create-type" value="">
+    </div>
+    <div layout:fragment="taskTypeDel">
+        <input type="hidden" id="hiddenDelType" name="hd-del-type" value="">
+    </div>
+</body>
+
 </html>
