@@ -29,7 +29,7 @@ public class TaskController {
 
     @RequestMapping({ "/", "/index" })
     public String index() {
-        return "redirect:/task?type";
+        return "redirect:/task";
     }
     /**
      * タスクを表示
@@ -38,7 +38,7 @@ public class TaskController {
      * @return
      */
     @RequestMapping(value = "/task", method = RequestMethod.GET)
-    public String getTask(Model model, @RequestParam("type") String type) {
+    public String getTask(Model model, @RequestParam(name = "type" ,required = false) String type) {
 
         // SESSIONからUserIDを取得
         String userId = userSession.getUserId();
