@@ -1,7 +1,5 @@
 package com.example.todo.model;
 
-import java.sql.Timestamp;
-
 import lombok.Data;
 
 @Data

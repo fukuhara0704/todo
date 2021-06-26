@@ -30,7 +30,7 @@ public class TodayController {
     protected UserSession userSession;
 
     
-    @RequestMapping(value = "/today", method = RequestMethod.GET)
+    @RequestMapping(value = "/today", method = RequestMethod.POST)
     public String today(Model model) {
         
         // SESSIONからUserIDを取得
